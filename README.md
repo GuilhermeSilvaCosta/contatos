@@ -1,18 +1,36 @@
 # contatos
 
--- Crie o banco "contatos_laravel" em seu postgres
+> Cadastro de contatos com laravel
 
--- Checar o seed para verificar login e senha padrão
+## Build Setup
 
--- Executar os migrations
+``` bash
+# install dependencies
+composer update
 
--- Executar os seeds
+# make .env
+cp .env.example .env
 
--- Preencher as variaveis para envio de e-mail:
+# make app key
+php artisan key:generate
 
-MAIL_DRIVER=smtp
-MAIL_HOST="your host"
-MAIL_PORT="your port"
-MAIL_USERNAME="your user"
-MAIL_PASSWORD="your pass"
+# create database "contatos_laravel" (postgres) and run migrates
+php artisan migrate
+
+# run seeds
+php artisan db:seed
+
+# run server
+php artisan serve
+```
+
+Checar o seed para verificar o login
+
+Preencher as variaveis para envio de e-mail:
+
+MAIL_DRIVER=smtp 
+MAIL_HOST="your host" 
+MAIL_PORT="your port" 
+MAIL_USERNAME="your user" 
+MAIL_PASSWORD="your pass" 
 MAIL_ENCRYPTION=null
